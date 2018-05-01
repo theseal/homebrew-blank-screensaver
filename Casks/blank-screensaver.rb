@@ -8,7 +8,7 @@ cask 'blank-screensaver' do
 
   screen_saver "macos-blank-screensaver-#{version}/Blank.qtz"
 
-  caveats do; <<-EOF.undent
+  caveats do; <<~EOF
     NOTE: Don't forget to enable the screensaver named "Blank" in "Desktop & Screen saver".
     `open /System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane`
     EOF
