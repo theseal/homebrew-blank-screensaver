@@ -17,7 +17,7 @@ cask 'blank-screensaver' do
 
     If you upgraded from an earlier version of Blank you might need to remove
     the older version by hand…
-    `rm -r ~/Library/Screen\ Savers/Blank.*`
+    `rm -r ~/Library/Screen\\ Savers/Blank.*`
     …and then reinstall the Cask.
   EOS
 
