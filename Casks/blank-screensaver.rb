@@ -6,10 +6,12 @@ cask 'blank-screensaver' do
   name 'Blank'
 
   homepage 'https://github.com/theseal/macos-blank-screensaver'
-  screen_saver "macos-blank-screensaver-#{version}/Blank.qtz" if MacOS.version == :catalina
-  screen_saver "macos-blank-screensaver-#{version}/Blank.saver" if MacOS.version == :mojava
-  screen_saver "macos-blank-screensaver-#{version}/Blank.qtz" if MacOS.version == :high_sierra
-  screen_saver "macos-blank-screensaver-#{version}/Blank.qtz" if MacOS.version == :sierra
+
+  if MacOS.version == :mojave
+    screen_saver "macos-blank-screensaver-#{version}/Blank.saver"
+  else
+    screen_saver "macos-blank-screensaver-#{version}/Blank.qtz"
+  end
 
   caveats <<~EOS
     NOTE: Don't forget to enable the screensaver named "Blank" in "Desktop & Screen saver".
