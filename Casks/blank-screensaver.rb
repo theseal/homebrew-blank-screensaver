@@ -16,15 +16,6 @@ cask 'blank-screensaver' do
     `open /System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane`
 
     If you upgraded from an earlier version of Blank you might need to remove
-    the older version by hand.
-    `rm -r ~/Library/Screen\ Savers/Blank.saver`
-  EOS
-
-  caveats <<~EOS
-    NOTE: Don't forget to enable the screensaver named "Blank" in "Desktop & Screen saver".
-    `open /System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane`
-
-    If you upgraded from an earlier version of Blank you might need to remove
     the older version by hand…
     `rm -r ~/Library/Screen\ Savers/Blank.*`
     …and then reinstall the Cask.
