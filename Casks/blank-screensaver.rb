@@ -7,7 +7,7 @@ cask 'blank-screensaver' do
 
   homepage 'https://github.com/theseal/macos-blank-screensaver'
 
-  if MacOS.version == :mojave
+  if MacOS.version == :mojave || MacOS.version == :big_sur
     screen_saver "macos-blank-screensaver-#{version}/Blank.saver"
   else
     screen_saver "macos-blank-screensaver-#{version}/Blank.qtz"
