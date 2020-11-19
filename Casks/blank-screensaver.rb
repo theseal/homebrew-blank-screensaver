@@ -1,6 +1,6 @@
 cask 'blank-screensaver' do
-  version '2.1.0'
-  sha256 '068bafd2707cc9de3cdeedfc8f0d0637b2dbd86c0cb5acb1ff0fec595dd8211d'
+  version '2.1.1'
+  sha256 'fa35c8bd75f09a01abc27cf723bf56b3844ace6b5f911592e75bd9040861edff'
 
   url "https://github.com/theseal/macos-blank-screensaver/archive/#{version}.tar.gz"
   name 'Blank'
