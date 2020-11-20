@@ -4,7 +4,7 @@ cask 'blank-screensaver' do
 
   url "https://github.com/theseal/macos-blank-screensaver/archive/#{version}.tar.gz"
   name 'Blank'
-
+  desc 'A blank (black) screensaver for MacOS/OS X.'
   homepage 'https://github.com/theseal/macos-blank-screensaver'
 
   if MacOS.version == :mojave || MacOS.version == :big_sur
@@ -13,14 +13,14 @@ cask 'blank-screensaver' do
     screen_saver "macos-blank-screensaver-#{version}/Blank.qtz"
   end
 
+  preflight do
+    File.delete('~/Library/Screen Savers/Blank.qtz') if File.exist?('~/Library/Screen Savers/Blank.qtz')
+    FileUtils.remove_dir('~/Library/Screen Savers/Blank.saver') if File.directory?('~/Library/Screen Savers/Blank.saver')
+  end
+
   caveats <<~EOS
     NOTE: Don't forget to enable the screensaver named "Blank" in "Desktop & Screen saver".
     `open /System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane`
-
-    If you upgraded from an earlier version of Blank you might need to remove
-    the older version by hand…
-    `rm -r ~/Library/Screen\\ Savers/Blank.*`
-    …and then reinstall the Cask.
   EOS
 
 end
