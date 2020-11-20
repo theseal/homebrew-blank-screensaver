@@ -18,9 +18,15 @@ cask 'blank-screensaver' do
     FileUtils.remove_dir('~/Library/Screen Savers/Blank.saver') if File.directory?('~/Library/Screen Savers/Blank.saver')
   end
 
+  postflight do
+    if MacOS.version == :big_sur
+      system_command "xattr",
+        args: ["-d", "com.apple.quarantine", "#{ENV["HOME"]}/Library/Screen Savers/Blank.saver"]
+    end
+  end
+
   caveats <<~EOS
     NOTE: Don't forget to enable the screensaver named "Blank" in "Desktop & Screen saver".
     `open /System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane`
   EOS
-
 end
